@@ -37,7 +37,7 @@ function AddFood(props) {
 
     return (
         <div>
-            <button onClick={btnToggle}>Add new Food</button>
+            <button onClick={btnToggle} style={{margin:'4vh 0'}}>Add new Food</button>
             {toggle ?  (<form onSubmit={newFood}>
                             <input
                                 style={{ marginTop: '40px' }}

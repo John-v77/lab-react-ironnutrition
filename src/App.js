@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './style/App.css';
 import FoodBox from './component/FoodBox';
+import AddFood from './component/AddFood';
+import foodsJson from './foods.json';
 
 
 
 function App() {
+  let [foods, setFoods] = useState(foodsJson)
+  
   return (
     <div className="App">
-    <FoodBox/>
+    <AddFood foods={foods} setFoods={setFoods}/>
+    <FoodBox foods={foods} setFoods={setFoods}/>
     </div>
   );
 }

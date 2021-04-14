@@ -24,7 +24,7 @@ function Search(props) {
 
     return (
         <div>
-            <input onChange={searchFood} type='text' name='search' placeholder='search' style={{width:'60vw', marginBottom:'5vh'}}/>
+            <input onChange={searchFood} type='text' name='search' placeholder='search' style={{width:'40vw', margin:'0 0 5vh 1vw'}}/>
             {displayFood()}
         </div>
     );

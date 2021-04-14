@@ -1,6 +1,22 @@
 import React from 'react';
 
 function FoodBox(props) {
+
+    const addToMenu = (e) => {
+        e.preventDefault()
+        console.log('click')
+        const foodToAdd = {
+            name:props.name,
+            calories:props.calories,
+            image:props.image,
+            qty:1
+        }
+
+        let todayMenu = [...props.todayFood]
+        todayMenu.unshift(foodToAdd)
+        props.setTodayFood(todayMenu)
+    }
+
     return (
         <div className="box">
          <article className="media">
@@ -14,7 +30,7 @@ function FoodBox(props) {
                 <div className="content">
                     <p>
                         <strong>{props.name}</strong> <br/>
-                        <small>{props.calories}</small>
+                        <small>{props.calories} cal</small>
                     </p>
                 </div>    
             </div>
@@ -24,7 +40,7 @@ function FoodBox(props) {
                         <input className="input" type="number" value="1" />
                     </div>
                     <div className="control">
-                        <button className="button is-info"> + </button>
+                        <button onclick={addToMenu} className="button is-info"> + </button>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@ function AllFoods(props) {
     const displayFood = () => {
         return props.foods.map(each => {
             return(
-                <FoodBox {...each}/>
+                <FoodBox {...each} todayFood ={props.todayFood}  setTodayFood={props.setTodayFood}/>
             )
         })
     }
